@@ -1,33 +1,125 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Nébula music - Registro</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <header>
-            <img src="imgs/nebula-03.svg" alt="Nébula logo" height="80">
-            <h1>Registro de usuarios</h1>
-        </header>
 
-        <main>
-            <section>
-                
-            </section>
-        </main>
+<head>
+    <title>Nébula music - Registro</title>
+    <meta charset="UTF-8">
+</head>
 
-        <footer>
-            <div>
-                Síguenos en nuestras redes.
-                <div>
-                    <a href="www.instagram.com" target="_blank">Instagram</a>
-                    <a href="www.facebook.com" target="_blank">Facebook</a>
-                    <a href="www.tiktok.com" target="_blank">Tiktok</a>
+<body>
+    <header>
+        <img src="imgs/nebula-03.svg" alt="Nébula logo" height="80">
+        <h1>Registro de usuarios</h1>
+    </header>
+
+    <main>
+        <section>
+            <form name="form-nuevo-usuario" action="/registro" method="post"
+                enctype="application/x-www-form-urlencoded">
+
+                <section name="titulo">
+                    <h3>Nuevo usuario</h3>
+                    <span>Completa la informacion y envia tus datos</span>
+
+                </section>
+
+                <section name="nombre">
+                    <label for="txt_name">Nombre completo:</label>
+                    <input type="text" id="txt_name" name="txt_name" required minlength="3" maxlength="200"
+                        autocomplete="name">
+                    <span> tu nombre completo</span>
+                </section>
+
+                <section name="correo">
+                    <label for="txt_email">Correo electrónico:</label>
+                    <input type="email" id="txt_email" name="txt_email" required minlength="10" maxlength="100"
+                        autocomplete="email">
+                    <span> tu correo electrónico</span>
+                </section>
+
+                <section name="contraseña">
+                    <label for="txt_password">Contraseña:</label>
+                    <input type="password" id="txt_password" name="txt_password" required autocomplete="off"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,16}$">
+                    <span> tu contraseña</span>
+                </section>
+
+                <section name="pseudonimo">
+                    <label for="txt_pseudonimo">Pseudónimo:</label>
+                    <input type="text" id="txt_pseudonimo" name="txt_pseudonimo" required minlength="3" maxlength="50"
+                        autocomplete="nickname">
+                    <span> tu pseudónimo</span>
+                </section>
+
+                <section name="estado">
+                    <label for="txt_estado">Estado:</label>
+                    <div>
+                        <input type="radio" value="Activo" id="rad_activo" name="rad_estado" required>
+                        <label for="rad_activo">Activo</label>
+
+                        <input type="radio" value="Inactivo" id="rad_inactivo" name="rad_estado" required>
+                        <label for="rad_inactivo">Inactivo</label>
+
+                        <input type="radio" value="Pendiente" id="rad_pendiente" name="rad_estado" required>
+                        <label for="rad_pendiente">Pendiente</label>
+                    </div>
+                    <span> tu estado de residencia</span>
+                </section>
+
+                <input type="radio" value="pendiente" id="rad_pendiente" name="rad_estado">
+                <label for="rad_pendiente">Pendiente</label>
+
+
+                <div name="cuenta">
+                    <label for="sel_cuenta">Cuenta</label>
+                    <select id="sel_cuenta" name="sel_cuenta" required>
+                        <option value="">-Selecciona-</option>
+                        <option value="gratis">Gratis</option>
+                        <option value="basica">Básica</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                    <span>Tu tipo de cuenta para desbloquear características</span>
                 </div>
+
+                <div name="fecha_nacimiento">
+                    <label for="txt_fecha_nacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="txt_fecha_nacimiento" name="txt_fecha_nacimiento" required>
+                    <span>Tu fecha de nacimiento</span>
+                </div>
+
+                <div name="terminos">
+                    <label for="chk">Aceptar términos y condiciones</label>
+                    <input name="chk_terminos" id="chk_terminos" type="checkbox" value="aceptado" required>
+                    <span>Debes aceptar antes de poder registrar tu cuenta</span>
+                </div>
+
+                <div name="options">
+                    <button type="submit">Registrar</button>
+                    <button type="reset">Cancelar</button>
+                </div>
+
+            </form>
+            
+        </section>
+
+        </form>
+
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            Síguenos en nuestras redes.
+            <div>
+                <a href="www.instagram.com" target="_blank">Instagram</a>
+                <a href="www.facebook.com" target="_blank">Facebook</a>
+                <a href="www.tiktok.com" target="_blank">Tiktok</a>
             </div>
+        </div>
 
-            Copyright Nébula 2025. 
-        </footer>
+        Copyright Nébula 2025.
+    </footer>
 
-    </body>
+</body>
+
 </html>
