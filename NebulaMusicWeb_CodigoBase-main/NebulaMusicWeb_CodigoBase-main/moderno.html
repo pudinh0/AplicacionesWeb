@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <title>Moderno</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Bienvenido a nuestro sitio moderno.</h1>
+    <!-- Se utiliza cuando la imagen necesita contexto --->
+    <figure>
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600"
+            alt="Imagen de prueba">
+        <figcaption>Figura 1: Imagen de prueba con figure.</figcaption>
+    </figure>
+
+    <!-- Se utiliza principalmente para imagenes responsaivas, permite definir distintos tamaños-->
+    <picture>
+        <source srcset="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200"
+            media="(min-width: 768px)">
+        <source srcset="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600"
+            media="(max-width: 767px)">
+
+        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600"
+            alt="Imagen de prueba con source">
+    </picture>
+
+    <!-- Independientemente del tamaño no se pixelea (vector) -->
+    <svg>
+        <circle cx="60" cy="60" r="50" stroke="black" stroke-width="2" fill="blue" />
+    </svg>
+
+    <!-- datalist -->
+    <label>
+        lenguajes de programacion:
+        <input list="lenguages">
+    </label>
+
+    <datalist id="lenguages">
+        <option value="java"> </option>
+        <option value="python"> </option>
+        <option value="javascript"> </option>
+    </datalist>
+
+    <!-- contenido desplegable-->
+    <details>
+        <summary>¿Que es HTML semantico?</summary>
+        <p>Es el uso de etiquetas que describen el contenido de una página web de forma clara y estructurada.</p>
+    </details>
+
+    <!-- video con controles -->
+    <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <!-- video sin controles, se reproduce automaticamente, sin sonido y en bucle -->
+    <video autoplay muted loop>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <track kind="subtitles" src="https://www.w3schools.com/html/subtitles_en.vtt" label="English subtitles">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <!-- audio con controles -->
+    <audio controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="audio/mp4">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+
+    <!-- iframe-->
+    <iframe width ="560" height="315" src="https://www.youtube.com/watch?v=TNf3GPizM58&list=RDTNf3GPizM58&start_radio=1" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+    
+    <!-- dialog-->
+
+    <button onclick="abrirModal()">Abrir mensaje</button>
+
+    <dialog id="myDialog">
+        <p>Este es un diálogo modal.</p>
+        <button onclick="cerrarModal()">Cerrar mensaje</button>
+    </dialog>
+
+
+    <script>
+        function abrirModal(){
+            document.getElementById('myDialog').showModal();
+        }
+        function cerrarModal(){
+            document.getElementById('myDialog').close();    
+        }
+    </script>
+
+</body>
+
+</html>
